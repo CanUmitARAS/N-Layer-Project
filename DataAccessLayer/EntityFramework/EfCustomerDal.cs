@@ -11,5 +11,5 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfCustomerDal : GenericRepository<Customer>, ICustomerDal
     {
-    }
+    } 
 }
