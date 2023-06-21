@@ -9,5 +9,6 @@ namespace BussinesLayer.Abstract
 {
     public interface ICategoryService:IGenericService<Category>
     {
+       
     }
 }

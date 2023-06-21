@@ -17,6 +17,9 @@
     @Html.TextBoxFor(x=>x.Stock, new { @class = "form-control" } )
     @Html.ValidationMessageFor(x=>x.Stock)
     <br />
+    @Html.Label("Kategori seçiniz")
+    @Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.v, new {@class = "form-control"} )
+    <br />    
     <button class="btn btn-success">Ürünü ekle</button>
 
 </form>

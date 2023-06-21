@@ -17,7 +17,10 @@
     @Html.Label("Şehir")
     @Html.TextBoxFor(x=>x.City, new { @class ="form-control" })
     <br />
-  
+    @Html.Label("Meslek seçiniz")
+    @Html.DropDownListFor(x=>x.JobID,(List<SelectListItem>)ViewBag.v, new {@class = "form-control"} )
+    <br />
+
     <button class="btn btn-info">Güncelle</button>
 
 </form>

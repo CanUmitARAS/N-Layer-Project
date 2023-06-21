@@ -10,6 +10,7 @@
 		<th>Ürün Adı</th>
 		<th>Fiyat</th>
 		<th>Stok</th>
+		<th>Kategori</th>
 		<th>Sil</th>
 		<th>Güncelle</th>
 	</tr>
@@ -20,6 +21,7 @@
 			<td>@item.Name</td>
 			<td>@item.Price</td>
 			<td>@item.Stock</td>
+			<td>@item.category.CategoryName</td>
 			<td><a href="/Product/DeleteProduct/@item.Id" class="btn btn-danger text-color:white">Sil</a></td>
 			<td><a href="/Product/UpdateProduct/@item.Id" class="btn btn-primary text-color:white">Güncelle</a></td>
 

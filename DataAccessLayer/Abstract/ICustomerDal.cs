@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ICustomerDal:IGenericDal<Customer>
+    public interface IcustomerDal:IGenericDal<Customer>
     {
+        List<Customer> GetCustomerListWithJob();
     }
 }

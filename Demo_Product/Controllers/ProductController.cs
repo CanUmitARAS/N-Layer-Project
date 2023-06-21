@@ -4,22 +4,34 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Demo_Product.Controllers
 {
     public class ProductController : Controller
     {
         ProductManager productManager = new ProductManager(new EfProductDal());
-        public IActionResult Index()
+		CategoryManager categoryManager= new CategoryManager(new EfCategoryDal());
+		public IActionResult Index()
         {
-            var values = productManager.TGetList();
+            var values = productManager.GetProductWithCategory();
             return View(values);
         }
 
         [HttpGet]
         public IActionResult AddProduct()
         {
-            return View();
+			List<SelectListItem> values = (from x in categoryManager.TGetList()
+
+										   select new SelectListItem
+										   {
+											   Text = x.CategoryName,
+											   Value = x.CategoryId.ToString()
+										   }).ToList();
+			ViewBag.v = values;
+			return View();
         }
 
         [HttpPost]

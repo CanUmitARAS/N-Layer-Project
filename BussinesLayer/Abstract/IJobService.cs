@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Abstract
+namespace BussinesLayer.Abstract
 {
-	public interface IJobDal :
-	IGenericDal<Job>
+	internal interface IJobService : IGenericService<Job>
 	{
+		
+
 	}
 }

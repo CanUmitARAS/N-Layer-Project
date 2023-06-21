@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BussinesLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace BussinesLayer.Concrete
@@ -12,9 +13,12 @@ namespace BussinesLayer.Concrete
     public class CategoryManager : ICategoryService
     {
         ICategoryDal _categoryDal;
-  
+		public CategoryManager(ICategoryDal categoryDal)
+		{
+			_categoryDal = categoryDal;
+		}
 
-        public void TDelete(Category t)
+		public void TDelete(Category t)
         {
             _categoryDal.Delete(t);
         }

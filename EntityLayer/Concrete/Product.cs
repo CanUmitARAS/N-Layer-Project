@@ -13,7 +13,9 @@ namespace EntityLayer.Concrete
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
-        
+        public Category category { get; set; }
+
+        public int CategoryId { get; set; }
 
     }
 }

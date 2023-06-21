@@ -11,14 +11,20 @@ namespace BussinesLayer.Concrete
 {
     public class CustomerManager : ICustomerService
     {
-       ICustomerDal _customerDal;
+       IcustomerDal _customerDal;
 
-        public CustomerManager(ICustomerDal customerDal)
+        public CustomerManager(IcustomerDal customerDal)
         {
             _customerDal = customerDal;
         }
 
-        public void TDelete(Customer t)
+		public List<Customer> GetCustomersListWithJob()
+		{
+
+            return _customerDal.GetCustomerListWithJob();
+		}
+
+		public void TDelete(Customer t)
         {
             _customerDal.Delete(t);
         }
